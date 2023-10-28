@@ -1,8 +1,45 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, Button, View} from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const HomeScreen = () => {
-  return <Text style={styles.text}>HomeScreen</Text>;
+const HomeScreen = ({navigation}) => {
+  console.log(navigation)
+  return(
+    <View>
+      <Text style={styles.text}>HomeScreen</Text>
+      <Button 
+      onPress={()=>navigation.navigate('Components')}
+      title={"go to component"}
+      />
+      <Button
+      title="Go to list"
+      onPress={()=>navigation.navigate('List')}
+      />
+      <Button
+      title="Go to Image"
+      onPress={()=>navigation.navigate('Image')}
+      />
+      <Button
+      title="Go to Counter"
+      onPress={()=>navigation.navigate('Counter')}
+      />
+      <Button
+      title="Go to Color"
+      onPress={()=>navigation.navigate('Color')}
+      />
+      <Button
+      title="Go to Square"
+      onPress={()=>navigation.navigate('Square')}
+      />
+      <Button
+      title="Go to TextScreen"
+      onPress={()=>navigation.navigate('Text')}
+      />
+      <TouchableOpacity onPress={()=>navigation.navigate('List')}>
+        <Text>Go to List Demo</Text>
+      </TouchableOpacity>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
